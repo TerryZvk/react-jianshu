@@ -1,26 +1,21 @@
 import Header from '../common/header';
 import { connect } from 'react-redux';
+import { actionCreators } from '../common/header/store/';
 
 const mapStateToProps = (state) => {
   return {
-    focused: state.header.focused
+    focused: state.header.get('focused')
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleFocused: () => {
-     const action = {
-       type: 'FOCUSED_INPUT'
-     };
-     dispatch(action);
+     dispatch(actionCreators.focusedAction());
     },
   
     handleBlur: () => {
-      const action = {
-        type: 'BLUR_INPUT'
-      };
-      dispatch(action);
+      dispatch(actionCreators.blurAction());
     }
   }
 }
