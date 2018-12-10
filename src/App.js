@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import Header from './common/header';
+import HeaderContainer from './containers/HeaderContainer';
 import { GlobalStyle } from './style.js';
+import store from './store';
+import { Provider } from 'react-redux';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Provider store={store}>
         <GlobalStyle />
-        <Header />
-      </div>
+        <HeaderContainer />
+      </Provider>
     );
   }
 }
