@@ -2,7 +2,8 @@ import * as actionTypes from './constants';
 import { fromJS } from 'immutable';
 
 const defaultState = fromJS({
-  focused: false
+  focused: false,
+  list: []
 });
 
 export default (state = defaultState, action) => {
@@ -11,6 +12,8 @@ export default (state = defaultState, action) => {
       return state.set('focused', true);
     case actionTypes.BLUR_INPUT:
       return state.set('focused', false);
+    case actionTypes.CHANGE_LIST:
+      return state.set('list', action.data)  
     default:
       return state;  
   }

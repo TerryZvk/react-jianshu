@@ -4,13 +4,15 @@ import { actionCreators } from '../common/header/store/';
 
 const mapStateToProps = (state) => {
   return {
-    focused: state.getIn(['header', 'focused'])
+    focused: state.getIn(['header', 'focused']),
+    list: state.getIn(['header','list'])
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleFocused: () => {
+     dispatch(actionCreators.getList());
      dispatch(actionCreators.focusedAction());
     },
   
