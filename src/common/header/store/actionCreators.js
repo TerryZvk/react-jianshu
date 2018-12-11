@@ -12,7 +12,21 @@ export const blurAction = () => ({
 
 export const changeListAction = (data) => ({
   type: actionTypes.CHANGE_LIST,
-  data: fromJS(data)
+  data: fromJS(data),
+  totalPage: Math.ceil(data.length / 10)
+})
+
+export const MouseEnterAction = () => ({
+  type: actionTypes.MOUSE_ENTER
+})
+
+export const MouseLeaveAction = () => ({
+  type: actionTypes.MOUSE_LEAVE
+})
+
+export const ChangePageAction = (page) => ({
+  type: actionTypes.CHANGE_PAGE,
+  page
 })
 
 export const getList = () => {

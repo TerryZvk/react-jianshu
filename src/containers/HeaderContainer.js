@@ -5,7 +5,10 @@ import { actionCreators } from '../common/header/store/';
 const mapStateToProps = (state) => {
   return {
     focused: state.getIn(['header', 'focused']),
-    list: state.getIn(['header','list'])
+    list: state.getIn(['header','list']),
+    page: state.getIn(['header', 'page']),
+    totalPage: state.getIn(['header', 'totalPage']),
+    mouseIn: state.getIn(['header', 'mouseIn']),
   }
 }
 
@@ -18,6 +21,23 @@ const mapDispatchToProps = (dispatch) => {
   
     handleBlur: () => {
       dispatch(actionCreators.blurAction());
+    },
+
+    handleMouseEnter: () => {
+      dispatch(actionCreators.MouseEnterAction())
+    },
+
+    handleMouseLeave: () => {
+      dispatch(actionCreators.MouseLeaveAction())
+    },
+
+    handleChangePage: (page, totalPage) => {
+      if(page < totalPage){
+        dispatch(actionCreators.ChangePageAction(page + 1))
+      }else{
+        dispatch(actionCreators.ChangePageAction(page = 1))
+      }
+      
     }
   }
 }

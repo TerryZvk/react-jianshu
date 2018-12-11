@@ -19,20 +19,30 @@ import {
 
 class Header extends Component {
 
-  getListArea(show){
-    if(show){
+  getListArea(){
+    const { focused, list, page, totalPage, mouseIn, handleMouseEnter, handleMouseLeave, handleChangePage } = this.props;
+    const newList = list.toJS();
+    const pageList = [];
+
+    if(newList.length){
+      for(let i = (page - 1)* 10;i < page * 10;i++){
+        if(newList[i]){
+          pageList.push(
+            <SearchInfoItem key={newList[i]}>{newList[i]}</SearchInfoItem>
+          )
+        }
+      }
+    }
+
+    if(focused || mouseIn){
       return (
-        <SearchInfo>
+        <SearchInfo onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch onClick={() => handleChangePage(page, totalPage)}>换一批</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            {
-              this.props.list.map((item) => {
-                return <SearchInfoItem key={item}>{item}</SearchInfoItem>
-              })
-            }
+            {pageList}
           </SearchInfoList>
         </SearchInfo>
       )
@@ -42,6 +52,8 @@ class Header extends Component {
   }
 
   render(){
+    const { focused, handleFocused, handleBlur} = this.props;
+
     return(
       <Fragment>
         <HeaderWrapper>
@@ -55,14 +67,14 @@ class Header extends Component {
             </NavItem>
             <SearchWraper>
               <CSSTransition 
-                in={this.props.focused}
+                in={focused}
                 timeout={200}
                 classNames='slide'
                 >
                 <NavSearch 
-                  className={this.props.focused ? 'focused' : ''} 
-                  onFocus={this.props.handleFocused} 
-                  onBlur={this.props.handleBlur}>
+                  className={focused ? 'focused' : ''} 
+                  onFocus={handleFocused} 
+                  onBlur={handleBlur}>
                 </NavSearch>
               </CSSTransition> 
               <i className='iconfont'>&#xe617;</i>
