@@ -39,7 +39,10 @@ class Header extends Component {
         <SearchInfo onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch onClick={() => handleChangePage(page, totalPage)}>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch onClick={() => handleChangePage(page, totalPage, this.spinIcon)}>
+              <i className='iconfont spin' ref={(icon) => {this.spinIcon = icon}}>&#xe851;</i>
+              换一批
+            </SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
             {pageList}
@@ -52,7 +55,7 @@ class Header extends Component {
   }
 
   render(){
-    const { focused, handleFocused, handleBlur} = this.props;
+    const { focused, list, handleFocused, handleBlur} = this.props;
 
     return(
       <Fragment>
@@ -73,12 +76,12 @@ class Header extends Component {
                 >
                 <NavSearch 
                   className={focused ? 'focused' : ''} 
-                  onFocus={handleFocused} 
+                  onFocus={() => handleFocused(list)} 
                   onBlur={handleBlur}>
                 </NavSearch>
               </CSSTransition> 
               <i className='iconfont'>&#xe617;</i>
-            {this.getListArea(this.props.focused)}
+            {this.getListArea(focused)}
             </SearchWraper>
           </Nav>
           <Addition>

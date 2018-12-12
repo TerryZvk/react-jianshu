@@ -14,8 +14,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleFocused: () => {
-     dispatch(actionCreators.getList());
+    handleFocused: (list) => {
+     (list.size === 0) &&  dispatch(actionCreators.getList());
      dispatch(actionCreators.focusedAction());
     },
   
@@ -31,7 +31,15 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(actionCreators.MouseLeaveAction())
     },
 
-    handleChangePage: (page, totalPage) => {
+    handleChangePage: (page, totalPage, spin) => {
+      let originAngle = spin.style.transform.replace(/[^0-9]/ig, '');
+      if(originAngle){
+        originAngle = parseInt(originAngle, 10);
+      }else{
+        originAngle = 0;
+      }
+      spin.style.transform = 'rotate('+ (originAngle + 360) +'deg)';
+
       if(page < totalPage){
         dispatch(actionCreators.ChangePageAction(page + 1))
       }else{

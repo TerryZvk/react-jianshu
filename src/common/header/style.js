@@ -114,12 +114,21 @@ export const Line = styled.div `
 export const SearchWraper = styled.div `
   float: left;
   position: relative;
-  
+
   .iconfont{
     position: absolute;
     right: 10px;
     top: 20px;
   }
+  .spin{
+    position: absolute;
+    right: 60px;
+    top: 19px;
+    transition: all .2s ease-in;
+    display: block;
+    transform-origin: center center;
+  }
+  
 `
 
 export const SearchInfo = styled.div `
@@ -128,7 +137,7 @@ export const SearchInfo = styled.div `
   width: 240px;
   padding: 0 20px;
   left: 0;
-  box-shadow: 0 0 8px rgba(0, 0 , 0, .2)
+  box-shadow: 0 0 8px rgba(0, 0 , 0, .2);
 `
 
 export const SearchInfoTitle = styled.div `
@@ -142,6 +151,7 @@ export const SearchInfoTitle = styled.div `
 export const SearchInfoSwitch = styled.span `
   font-size: 13px;
   float: right;
+  cursor: pointer;
 `
 export const SearchInfoList = styled.div `
   overflow: hidden;
