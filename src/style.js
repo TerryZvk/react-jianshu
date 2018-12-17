@@ -47,11 +47,11 @@ export const GlobalStyle = createGlobalStyle `
 
   @font-face {
     font-family: 'iconfont';  /* project id 957233 */
-    src: url('//at.alicdn.com/t/font_957233_lb41dy4fg4.eot');
-    src: url('//at.alicdn.com/t/font_957233_lb41dy4fg4.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_957233_lb41dy4fg4.woff') format('woff'),
-    url('//at.alicdn.com/t/font_957233_lb41dy4fg4.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_957233_lb41dy4fg4.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_957233_6wgia632i1t.eot');
+    src: url('//at.alicdn.com/t/font_957233_6wgia632i1t.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_957233_6wgia632i1t.woff') format('woff'),
+    url('//at.alicdn.com/t/font_957233_6wgia632i1t.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_957233_6wgia632i1t.svg#iconfont') format('svg');
   }
 
   .iconfont {

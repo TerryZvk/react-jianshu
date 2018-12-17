@@ -7,14 +7,14 @@ class Topic extends Component {
     return (
       <TopicWrapper>
         {
-          this.props.topicList.map((item) => {
-            return (
+          this.props.topicList.map((item) => 
+            (
               <TopicItem key={item.get('id')}>
-                <img src={item.get('imgUrl')} alt='' />
+                <img className='topic-pic' src={item.get('imgUrl')} alt='' />
                 {item.get('title')}
-            </TopicItem> 
+              </TopicItem> 
             )
-          })
+          )
         }
       </TopicWrapper>
     );
