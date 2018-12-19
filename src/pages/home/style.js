@@ -17,7 +17,7 @@ export const HomeLeft = styled.div`
   }
 `
 export const HomeRight = styled.div`
-  width: 240px;
+  width: 280px;
   float: right;
 `
 
@@ -98,4 +98,51 @@ export const ListInfo = styled.div `
     display: inline-block;
     margin-right: 10px;
   }
+`
+
+export const RecommendWrapper = styled.div`
+  margin: 30px 0;
+  width: 280px;
+`
+export const RecommendItem = styled.div`
+  height: 52px;
+  width: 280px;
+  background: url(${(props) => props.imgUrl});
+  background-size: contain;
+`
+export const DownloadWrapper = styled.div`
+  width: 280px;
+  height: 82px;
+  padding: 10px 22px;
+  border-radius: 4px;
+  border: 1px solid #f0f0f0;
+`
+
+export const DownloadQRcode = styled.div`
+  width: 60px;
+  height: 60px;
+  float: left;
+  background: url(http:////cdn2.jianshu.io/assets/web/download-index-side-qrcode-cb13fc9106a478795f8d10f9f632fccf.png);
+  background-size: contain;
+`
+export const DownloadInfo = styled.div`
+  float: left;
+  margin: 10px;
+`
+export const WriterWrapper = styled.div`
+margin-top: 24px;
+  .avatar{
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+`
+export const WriterTitle = styled.div`
+
+`
+export const AllWriter = styled.div`
+
 `

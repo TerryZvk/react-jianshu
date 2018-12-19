@@ -87,6 +87,87 @@ const defaultState = fromJS({
       likeNum: 43,
       imgUrl: '//upload-images.jianshu.io/upload_images/3283382-3cc8dd9fefa74fcb.jpg!thumbnail?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240'
     }
+  ],
+  recommendList: [
+    {
+      id: 1,
+      imgUrl: 'http://cdn2.jianshu.io/assets/web/banner-s-3-7123fd94750759acf7eca05b871e9d17.png'
+    },
+    {
+      id: 2,
+      imgUrl: 'http://cdn2.jianshu.io/assets/web/banner-s-4-b70da70d679593510ac93a172dfbaeaa.png'
+    },
+    {
+      id: 3,
+      imgUrl: 'http://cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png'
+    },
+    {
+      id: 4,
+      imgUrl: 'http://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png'
+    },
+    {
+      id: 5,
+      imgUrl: 'http://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png'
+    }
+  ],
+  recommendWriter: [
+    {
+      id: 1,
+      author: '木清琳',
+      avatar: 'http://upload.jianshu.io/users/upload_avatars/2631077/dc99c361412c?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+      writeNum: '216.5k',
+      likeNum: '1.2k'
+    },
+    {
+      id: 2,
+      author: '遛遛心情的溜妈',
+      avatar: 'http:////upload.jianshu.io/users/upload_avatars/5205317/1179d71b-e7c6-4023-89e8-bba25f88272b.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+      writeNum: '566.5k',
+      likeNum: '2.2k'
+    },
+    {
+      id: 3,
+      author: '三儿王屿',
+      avatar: 'http:////upload.jianshu.io/users/upload_avatars/3950651/acfaa0ce-42fe-424a-b7c8-9a0136fb96ec.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+      writeNum: '253.5k',
+      likeNum: '3.2k'
+    },
+    {
+      id: 4,
+      author: '老沈',
+      avatar: 'http:////upload.jianshu.io/users/upload_avatars/7416466/fc1a1a0d-e3c7-4bca-9720-028c5c9914f3.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+      writeNum: '216.5k',
+      likeNum: '4.2k'
+    },
+    {
+      id: 5,
+      author: '吴晓布',
+      avatar: 'http:////upload.jianshu.io/users/upload_avatars/3343569/6940ee65-036f-4b7a-9935-5915d9b67d14.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+      writeNum: '221.5k',
+      likeNum: '5.2k'
+    }
+  ],
+  bannerImgList: [
+    {
+      id: 1,
+      imgUrl: '//upload.jianshu.io/admin_banners/web_images/4582/2db83cc6f08d13c2f83002238ca32b784266c4fb.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540'
+    },
+    {
+      id: 2,
+      imgUrl: '//upload.jianshu.io/admin_banners/web_images/4587/37a0abd67a60ad056442c351f94bc781eb36c704.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540'
+    },
+    {
+      id: 3,
+      imgUrl: '//upload.jianshu.io/admin_banners/web_images/4586/2eff4db8c6dac6253049da311e4f65359e075775.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540'
+    },
+    {
+      id: 4,
+      imgUrl: '//upload.jianshu.io/admin_banners/web_images/4583/40bca38a47b32bdc04a1997a6ac9e76951217c18.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540'
+    },
+    {
+      id: 5,
+      imgUrl: '//upload.jianshu.io/admin_banners/web_images/4581/7d2de2315ecbba908b85d9278f5e96896027f28a.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540'
+    }
   ]
 });
 
