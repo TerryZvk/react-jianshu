@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { WriterWrapper, AllWriter } from '../style';
+import { WriterWrapper } from '../style';
 
 class Writer extends Component {
   render() {
@@ -8,29 +8,31 @@ class Writer extends Component {
     return (
       <WriterWrapper>
         <div className='title'> 
-          <span>推荐作者</span><span>换一批</span>
+          <span className='left-side'>推荐作者</span><span className='right-side'><i className='iconfont'>&#xe851;</i>换一批</span>
         </div>
         <ul>
         {
           recommendWriter.map(item => (
-            <li key={item.get('id')}>
+            <li key={item.get('id')} className='writer'>
               <img src={item.get('avatar')} alt='' className='avatar'/>
-              <div>
-                <div>
+              <div className='writer-list'>
+                <div className='name'>
                   {item.get('author')}
                 </div>
-                <div>
+                <div className='writer-info'>
                   <span>写了{item.get('writeNum')}</span>.<span>{item.get('likeNum')}喜欢</span>
                 </div>
               </div>
-              <div>
+              <div className='follow'>
                 <a href='www.baidu.com'>+关注</a>
               </div>
             </li>
           ))
         }
         </ul>
-        <AllWriter />
+        <div　className='all-writer'>
+          <a href='http://www.baidu.com'>查看全部 ></a>
+        </div>
       </WriterWrapper>
     );
   }

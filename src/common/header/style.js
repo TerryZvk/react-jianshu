@@ -118,7 +118,7 @@ export const SearchWraper = styled.div `
   .iconfont{
     position: absolute;
     right: 10px;
-    top: 20px;
+    top: 18px;
   }
   .spin{
     position: absolute;
@@ -139,6 +139,7 @@ export const SearchInfo = styled.div `
   left: 0;
   background: #fff;
   box-shadow: 0 0 8px rgba(0, 0 , 0, .2);
+  z-index: 9999;
 `
 
 export const SearchInfoTitle = styled.div `

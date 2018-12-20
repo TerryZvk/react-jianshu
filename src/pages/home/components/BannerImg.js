@@ -21,4 +21,4 @@ const mapStateToProps = (state) => ({
   bannerImgList: state.getIn(['home', 'bannerImgList'])
 })
 
-export default connect(mapStateToProps, null)(BannerImg);
+export default connect(mapStateToProps, null)(BannerImg); 

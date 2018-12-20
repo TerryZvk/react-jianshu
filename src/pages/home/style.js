@@ -130,7 +130,7 @@ export const DownloadInfo = styled.div`
   margin: 10px;
 `
 export const WriterWrapper = styled.div`
-margin-top: 24px;
+  margin-top: 24px;
   .avatar{
     float: left;
     width: 48px;
@@ -138,10 +138,59 @@ margin-top: 24px;
     margin-right: 10px;
     border-radius: 50%;
   }
+  .title{
+    overflow: hidden;
+    font-size: 14px;
+    color: #969696;margin-bottom: 10px;
+    .left-side{
+      float: left
+    }
+    .right-side{
+      float: right;
+    }
+  }
+  .writer{
+    overflow: hidden;
+    margin-bottom: 15px;
+    .avatar{
+      float: left;
 
-`
-export const WriterTitle = styled.div`
-
+    }
+    .writer-list{
+      float: left;
+      .name{
+        padding-top: 5px;
+        font-size: 14px;
+      }
+      .writer-info{
+        font-size: 12px;
+        color: #969696;
+      }
+    }
+    .follow{
+      float: right;
+      margin-top: 5px;
+      padding: 0;
+      a{
+        font-size: 13px;
+        color: #42c02e;
+      }  
+    }
+  }
+  .all-writer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    a{
+      display: block;
+      color: #787878;
+      font-size: 13px;
+    }
+  }
 `
 export const AllWriter = styled.div`
 
