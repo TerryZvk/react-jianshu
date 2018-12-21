@@ -6,8 +6,14 @@ import Writer from './components/Writer';
 import Recommend from './components/Recommend';
 import Download from './components/Download';
 import BannerImg from './components/BannerImg';
+import { connect } from 'react-redux';
+import { actionCreators } from './store';
 
 class Home extends Component {
+  componentDidMount(){
+    this.props.changeHomeData()
+  }
+
   render() {
     return (
       <HomeWraper>
@@ -26,4 +32,11 @@ class Home extends Component {
   }
 }
 
-export default Home;
+const mapDispatchToProps = (dispatch) => ({
+  changeHomeData(){
+   const action = actionCreators.getHomeData();
+   dispatch(action);
+  }
+})
+
+export default connect(null, mapDispatchToProps)(Home);
