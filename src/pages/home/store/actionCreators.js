@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CHANGE_HOME_DATA, LOAD_MORE_LIST } from './constants';
+import { CHANGE_HOME_DATA, LOAD_MORE_LIST, BACK_TOP } from './constants';
 import { fromJS } from 'immutable';
 
 const homeData = (result) => ({
@@ -33,3 +33,8 @@ export const getMoreList = () => {
     })
   }
 }
+
+export const toggleTopShow = (value) => ({
+  type: BACK_TOP,
+  value
+})

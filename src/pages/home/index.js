@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HomeWraper, HomeLeft, HomeRight } from './style';
+import { HomeWraper, HomeLeft, HomeRight, BackTop } from './style';
 import Topic from './components/Topic';
 import List from './components/List';
 import Writer from './components/Writer';
@@ -11,7 +11,20 @@ import { actionCreators } from './store';
 
 class Home extends Component {
   componentDidMount(){
-    this.props.changeHomeData()
+    this.props.changeHomeData();
+    this.bindEvents();
+  }
+
+  handleScrollTop(){
+    window.scrollTo(0, 0)
+  }
+
+  bindEvents(){
+    window.addEventListener('scroll', this.props.changeScrollTopShow)
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('scroll', this.props.changeScrollTopShow)
   }
 
   render() {
@@ -27,16 +40,31 @@ class Home extends Component {
           <Download />
           <Writer />
         </HomeRight>
+        {this.props.showScroll ? ( <BackTop onClick={this.handleScrollTop}>回到顶部</BackTop> ): null}
+       
       </HomeWraper>
     );
   }
 }
 
+const mapStateToProps = (state) => ({
+  showScroll: state.getIn(['home', 'showScroll'])
+})
+
 const mapDispatchToProps = (dispatch) => ({
   changeHomeData(){
    const action = actionCreators.getHomeData();
    dispatch(action);
+  },
+
+  changeScrollTopShow(){
+    const scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+    if(scrollTop > 200){
+      dispatch(actionCreators.toggleTopShow(true))
+    }else{
+      dispatch(actionCreators.toggleTopShow(false))
+    }
   }
 })
 
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
