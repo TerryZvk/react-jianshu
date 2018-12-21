@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import { CHANGE_HOME_DATA } from './constants';
+import { CHANGE_HOME_DATA, LOAD_MORE_LIST } from './constants';
 
 const defaultState = fromJS({
   topicList: [],
@@ -19,6 +19,8 @@ export default (state = defaultState, action) => {
         recommendWriter: fromJS(action.recommendWriter),
         bannerImgList: fromJS(action.bannerImgList)
       })
+    case LOAD_MORE_LIST:
+      return state.set('articleList', state.get('articleList').concat(action.list))
     default: 
       return state
   }

@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { CHANGE_HOME_DATA } from './constants';
+import { CHANGE_HOME_DATA, LOAD_MORE_LIST } from './constants';
+import { fromJS } from 'immutable';
 
 const homeData = (result) => ({
   type: CHANGE_HOME_DATA,
@@ -15,6 +16,20 @@ export const getHomeData = () => {
     axios.get('/api/homeData.json').then((res)=>{
       const result = res.data.data;
       dispatch(homeData(result));
+    })
+  }
+}
+
+const loadMoreList = (list) => ({
+  type: LOAD_MORE_LIST,
+  list: fromJS(list)
+})
+
+export const getMoreList = () => {
+  return (dispatch) => {
+    axios.get('/api/homeList.json').then((res) => {
+      const result = res.data.data;
+      dispatch(loadMoreList(result));
     })
   }
 }
