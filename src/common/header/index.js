@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { 
   HeaderWrapper, 
@@ -17,7 +17,7 @@ import {
   SearchInfoList
 } from './style';
 
-class Header extends Component {
+class Header extends PureComponent {
 
   getListArea(){
     const { focused, list, page, totalPage, mouseIn, handleMouseEnter, handleMouseLeave, handleChangePage } = this.props;

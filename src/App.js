@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import HeaderContainer from './containers/HeaderContainer';
 import { GlobalStyle } from './style.js';
 import store from './store';
@@ -7,7 +7,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './pages/home';
 import Detail from './pages/detail';
 
-class App extends Component {
+class App extends PureComponent {
   render() {
     return (
       <Provider store={store}>

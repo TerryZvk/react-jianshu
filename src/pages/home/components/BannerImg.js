@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Carousel } from 'antd';
 
-class BannerImg extends Component {
+class BannerImg extends PureComponent {
   render() {
     const { bannerImgList } =this.props;
     return (
